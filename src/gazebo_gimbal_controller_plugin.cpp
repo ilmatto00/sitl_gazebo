@@ -483,7 +483,7 @@ void GimbalControllerPlugin::OnUpdate()
     double dt = (time - this->lastUpdateTime).Double();
 
     // We want yaw to control in body frame, not in global.
-    double yaw_command = this->yawCommand + this->lastImuYaw;
+    double yaw_command = this->yawCommand + this->lastImuYaw + M_PI;
 
     // truncate command inside joint angle limits
 #if GAZEBO_MAJOR_VERSION >= 9
